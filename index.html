@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="app.js"></script>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- jsx로 적은 코드를 브라우저가 이해할 수 있는 형태로 바꿔주는 스크립트 babeljs.io standalone--->
+  <script type="text/babel">
+    const root = document.getElementById("root");
+    let counter = 0;
+    function countUp(){
+        counter=counter+1;
+        render();
+    }
+    function render(){
+        ReactDOM.render(<Container />, root);
+    }
+    const Container = () => (
+      <div>
+        <h3>Total clicks: {counter}</h3>
+        <button onClick={countUp}>Click me</button>
+      </div>
+    );
+
+    /*const container = React.createElement("div", null, [Title, Button]);*/
+    ReactDOM.render(<Container />, root); //ReactDom은 container element를 root div안에 render
+  </script>
+</html>
