@@ -1,1 +1,5 @@
-console.log(1234);
+const calculator={
+    add: function(a,b){
+        console.log(a,b);
+    }
+}
