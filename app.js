@@ -1,5 +1,2 @@
-const calculator={
-    add: function(a,b){
-        console.log(a,b);
-    }
-}
+const age=prompt("How old are you?");
+console.log(typeof age);
